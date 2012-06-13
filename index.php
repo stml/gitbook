@@ -1,8 +1,11 @@
 <?
-echo 'go';
-require_once('github/Autoloader.php');
-Github_Autoloader::register();
-$github = new Github_Client();
-$user = $github->getUserApi()->show('stml');
-echo $user;
+
+include('git_ops.php');
+$git = new GitOps();
+
+$user = 'stml';
+$repo = 'timelinez';
+
+print_r($git->getRepo($user,$repo));
+
 ?>
